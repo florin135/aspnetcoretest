@@ -1,0 +1,23 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Food</title>
+</head>
+<body>
+<h1> Hello from a view</h1>
+<div> @Model.CurrentMessage </div>
+
+<table>
+    @foreach (var resutaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>
+                <a href="../home/details/@resutaurant.Id">Details</a>
+                @Html.ActionLink("View","Details",new { id=resutaurant.Id})
+                </td>
+            <td> @resutaurant.Name </td>
+        </tr>
+    }
+</table>
+</body>
+</html>

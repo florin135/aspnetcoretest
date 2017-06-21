@@ -1,0 +1,21 @@
+﻿@using CoreFoundamentals.Entities
+@model Restaurant
+<div>
+    <h1>Create</h1>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Cusine)
+                @Html.DropDownListFor(m => m.Cusine, Html.GetEnumSelectList(typeof (CusineType)))
+            </div>
+            <div>
+                <input type="submit" value="Save"/>
+            </div>
+        }
+    </div>
+</div>
